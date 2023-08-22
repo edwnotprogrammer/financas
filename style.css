@@ -8,23 +8,24 @@ body {
     box-sizing: border-box;
     background-color: white;
     color: black;
-    
+
 }
 
 .content__header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
     padding: 20px 0 50px;
-   
+     background: rgb(104, 180, 132);
+    background: radial-gradient(circle, rgba(104, 180, 132, 1) 20%, rgba(104, 180, 132, 1) 50%, rgba(0, 0, 0, 1) 80%);
+
 
 }
 
 .content__header img {
 
     justify-content: center;
+
 }
 
 .content__footer {
@@ -34,6 +35,8 @@ body {
     position: fixed;
     width: 100%;
     bottom: 0;
+    background: rgb(104, 180, 132);
+    background: radial-gradient(circle, rgba(104, 180, 132, 1) 20%, rgba(104, 180, 132, 1) 50%, rgba(0, 0, 0, 1) 80%);
 
 }
 
@@ -49,13 +52,13 @@ body {
     gap: 1.5rem;
     text-align: center;
     align-items: center;
-   
-;
-    
+
+    ;
+
 }
 
 .content__card {
-    background-color: tomato;
-    border-radius: 5px ;
+    background-color: #638E58;
+    border-radius: 5px;
     width: 200px;
 }
