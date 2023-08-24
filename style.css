@@ -54,7 +54,7 @@ body {
 
 }
 
-.links img {
+.links ion-icon {
     width: 25px;
     height: 25px;
 }
@@ -126,24 +126,28 @@ body {
     width: 100%;
     font-size: 16px;
     font-weight: bold;
-    padding: 5px;
+    align-items: center;
+
+
 
 
 }
 
-.button img {
+.button ion-icon {
 
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
 
 }
 
 .content___radio {
     display: flex;
-    padding: 10px 0 0 0;
+    padding: 1% 0 0 0;
     gap: 1.5rem;
 
 }
+
+/* TABELA */
 
 .content___table {
     display: flex;
@@ -152,6 +156,7 @@ body {
     border-radius: 3px;
     box-shadow: 5px 5px 5px gray;
     border: .5px solid black;
+
 }
 
 table {
@@ -176,6 +181,30 @@ td {
     background-color: #E7E9EB;
 
 }
+
+.button___td {
+    gap: 2rem;
+
+}
+.btn-actions ion-icon{
+    cursor: pointer;
+
+}
+
+.btn-actions ion-icon:nth-child(1):hover {
+    color: rgb(104, 180, 132);
+}
+.btn-actions ion-icon:nth-child(2):hover {
+    color: rgb(231, 32, 25);
+}
+
+.content___table ion-icon{
+    width: 20px;
+    height: 20px;
+}
+
+
+/* END TABELA */
 
 
 /* DESCRIÇÃO */
