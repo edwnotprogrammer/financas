@@ -54,6 +54,7 @@ body {
 
 .content__card {
     background-color: white;
+
     border-radius: 3px;
     width: 400px;
     height: 90px;
@@ -95,8 +96,9 @@ body {
 
 .content__card p {
     align-items: center;
-    font-size: 20px;
+    font-size: 25px;
     justify-content: center;
+    font-weight: bolder;
 }
 
 /* end Section */
@@ -153,7 +155,7 @@ input[type=number]::-webkit-outer-spin-button {
     left: 0;
     transition: .3s;
     padding: 10px 8px;
-    color: #040305;
+    color:black;
     font-size: 1rem;
     pointer-events: none;
 }
@@ -253,20 +255,26 @@ td {
 
 .btn-actions ion-icon {
     cursor: pointer;
-
+    
 }
+
 
 .btn-actions ion-icon:nth-child(1):hover {
     color: rgb(87, 155, 112);
+    transform: scale( 1.5);
+    transition: .2s;
 }
 
 .btn-actions ion-icon:nth-child(2):hover {
     color: rgb(231, 32, 25);
+    transform: scale( 1.5);
+    transition: .2s;
 }
 
 .content___table ion-icon {
     width: 20px;
     height: 20px;
+    
 }
 
 /* END TABELA */
@@ -304,6 +312,12 @@ td {
     width: 25px;
     height: 25px;
 }
+.links ion-icon:hover{
+    color: #E7E9EB;
+    cursor:pointer;
+    transform: scale( 1.5);
+    transition: .2s;
 
+}
 
 /* end FOOTER */
