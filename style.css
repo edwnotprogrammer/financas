@@ -297,6 +297,7 @@ td {
 }
 
 .devdu {
+    
     color: #F2F2F2;
     font-weight: bold;
     margin: 0 auto;
@@ -304,6 +305,7 @@ td {
     flex: 1;
     align-items: center;
     text-align: center;
+    
 }
 
 .links {
@@ -312,6 +314,7 @@ td {
     justify-content: center;
     padding-top: 5px;
     gap: .5rem;
+    
 
 
 }
@@ -326,7 +329,7 @@ td {
 }
 
 #insta ion-icon:hover {
-    color: #7f37c9;
+    color: #ff2992;
     cursor: pointer;
     transform: scale(1.5);
     transition: .2s;
