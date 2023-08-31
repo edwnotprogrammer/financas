@@ -245,6 +245,7 @@ table {
 }
 
 
+
 .content___table th,
 td {
     text-align: center;
@@ -271,16 +272,27 @@ td {
 }
 
 
-.btn-actions ion-icon:nth-child(1):hover {
+.btn-actions ion-icon:nth-child(odd):hover {
     color: rgb(87, 155, 112);
     transform: scale(1.5);
     transition: .2s;
 }
 
-.btn-actions ion-icon:nth-child(2):hover {
+.btn-actions ion-icon:nth-child(even):hover {
     color: rgb(231, 32, 25);
     transform: scale(1.5);
     transition: .2s;
+}
+
+.icon-up-down ion-icon:nth-child(odd) {
+    color: green;
+
+}
+
+.icon-up-down ion-icon:nth-child(even) {
+    color: red;
+    display: none;
+
 }
 
 .content___table ion-icon {
@@ -317,7 +329,7 @@ td {
 }
 
 .links {
-   display: flex;
+    display: flex;
     padding-top: 5px;
     gap: .5rem;
 }
