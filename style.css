@@ -77,17 +77,15 @@ body {
 }
 
 
-.content__card ion-icon:nth-child(1) {
+#checkd{
     color: green;
 }
 
-.content__card ion-icon:nth-child(2) {
+#alert {
     color: red;
+  
 }
 
-.content__card ion-icon:nth-child(2) {
-    display: none;
-}
 
 
 .content__card h1 {

@@ -21,95 +21,112 @@
                         Proventos
                         <ion-icon name="arrow-up-outline"></ion-icon>
                     </h1>
-                    <p >R$
-                        <span class="p-number"> 0.00<span >
-                     </p>
-                </div>
-                <div class="content__card">
-                    <h1 class="gastos">
-                        Gastos
-                        <ion-icon name="arrow-down-outline"></ion-icon>
-                    </h1>
-                    <p >R$
-                        <span class="g-number"> 0.00<span >
-                     </p>
-                </div>
-                <div class="content__card">
-                    <h1>
-                        Saldo
-                        <ion-icon name="checkmark-circle"></ion-icon>
-                        <ion-icon name="alert-circle"></ion-icon>
-                    </h1>
-                    <p >R$
-                       <span class="s-number"> 0.00<span >
-                    </p>
-                </div>
-            </section>
-            <div class="content__section__desc">
-                <div class="content__desc">
-                    <input type="text" required id="desc">
-                    <span>Descrição</span>
-                    <i></i>
-                </div>
-                <div class="content__desc">
-                    <input
-                        type="number"
-                        step="0.01"
-                        required
-                        id="valor"
-                    >
-                    <span>Valor</span>
-                    <i></i>
-                </div>
-                <div class="content___desc___radio">
-                    <input type="radio" name="modalidade" id="r-entrada" value="E" checked>
-                    <label for="r-entrada">
-                        Entrada
-                    </label>
-                    <input type="radio" name="modalidade" id="r-saida" value="S">
-                    <label for="r-saida">
-                        Saida
-                    </label>
-                </div>
-                <button class="content___desc___button" type="submit" id="btn">
-                    <ion-icon name="add-circle-outline"></ion-icon>
-                    Salvar
-                </button>
-            </div>
-            <div class="content___table">
-                <table id-="Tabela" >
-                    <thead>
-                        <th>Descrição</th>
-                        <th class="t-valor">Valor</th>
-                        <th class="t-data">Data</th>
-                        <th class="t-status">Status</th>
-                        <th class="t-opcoes">Opções</th>
-                    </thead>
-
-                    <tbody></tbody>
-                </table>
-            </div>
-        </main>
-        <footer class="content__footer">
-            <div class="devdu">
-                DevDu 2023, © Copyright - Todos os Direitos Reservados.
-            </div>
-            <div class="links">
-                <a href="https://www.instagram.com/t_wo_d/" target="_blank" id="insta">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-                <a href="https://www.linkedin.com/in/eduardo-santos-pessoa-602ab4231/" target="_blank" id="lin">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                </a>
-                <a href="https://www.facebook.com/Eduardo.santos3117" target="_blank" id="face">
-                    <ion-icon name="logo-facebook"></ion-icon>
-                </a>
-            </a>
-            <a href="https://github.com/Edusanpe" target="_blank" id="git">
-                <ion-icon name="logo-github"></ion-icon>
-            </a>
-        </div>
-    </footer>
-</body>
-<script src="script.js"></script>
-</html>
+                    <p>
+                        R$
+                        <span class="p-number"> 0.00
+                            <span>
+                            </p>
+                        </div>
+                        <div class="content__card">
+                            <h1 class="gastos">
+                                Gastos
+                                <ion-icon name="arrow-down-outline"></ion-icon>
+                            </h1>
+                            <p>
+                                R$
+                                <span class="g-number"> 0.00
+                                    <span>
+                                    </p>
+                                </div>
+                                <div class="content__card">
+                                    <h1>
+                                        Saldo
+                                        <div id="checkd-alert">
+                                            <ion-icon id="checkd" name="checkmark-circle"></ion-icon>
+                                        </div>
+                                    </h1>
+                                    <p>
+                                        R$
+                                        <span class="s-number"> 0.00
+                                            <span>
+                                            </p>
+                                        </div>
+                                    </section>
+                                    <div class="content__section__desc">
+                                        <div class="content__desc">
+                                            <input type="text" required id="desc">
+                                            <span>Descrição</span>
+                                            <i></i>
+                                        </div>
+                                        <div class="content__desc">
+                                            <input
+                                                type="number"
+                                                step="0.01"
+                                                required
+                                                id="valor"
+                                            >
+                                            <span>Valor</span>
+                                            <i></i>
+                                        </div>
+                                        <div class="content___desc___radio">
+                                            <input
+                                                type="radio"
+                                                name="modalidade"
+                                                id="r-entrada"
+                                                value="E"
+                                                checked
+                                            >
+                                            <label for="r-entrada">
+                                                Entrada
+                                            </label>
+                                            <input
+                                                type="radio"
+                                                name="modalidade"
+                                                id="r-saida"
+                                                value="S"
+                                            >
+                                            <label for="r-saida">
+                                                Saida
+                                            </label>
+                                        </div>
+                                        <button class="content___desc___button" type="submit" id="btn">
+                                            <ion-icon name="add-circle-outline"></ion-icon>
+                                            Salvar
+                                        </button>
+                                    </div>
+                                    <div class="content___table">
+                                        <table id-="Tabela">
+                                            <thead>
+                                                <th>Descrição</th>
+                                                <th class="t-valor">Valor</th>
+                                                <th class="t-data">Data</th>
+                                                <th class="t-status">Status</th>
+                                                <th class="t-opcoes">Opções</th>
+                                            </thead>
+                                            <tbody></tbody>
+                                        </table>
+                                    </div>
+                                </main>
+                                <footer class="content__footer">
+                                    <div class="devdu">
+                                        DevDu 2023, © Copyright - Todos os Direitos Reservados.
+                                    </div>
+                                    <div class="links">
+                                        <a href="https://www.instagram.com/t_wo_d/" target="_blank" id="insta">
+                                            <ion-icon name="logo-instagram"></ion-icon>
+                                        </a>
+                                        <a href="https://www.linkedin.com/in/eduardo-santos-pessoa-602ab4231/" target="_blank" id="lin">
+                                            <ion-icon name="logo-linkedin"></ion-icon>
+                                        </a>
+                                        <a href="https://www.facebook.com/Eduardo.santos3117" target="_blank" id="face">
+                                            <ion-icon name="logo-facebook"></ion-icon>
+                                        </a>
+                                    </a>
+                                    <a href="https://github.com/Edusanpe" target="_blank" id="git">
+                                        <ion-icon name="logo-github"></ion-icon>
+                                    </a>
+                                </div>
+                            </footer>
+                        </body>
+                        <script src="script.js"></script>
+                    </html>

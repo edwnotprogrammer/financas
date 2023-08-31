@@ -82,15 +82,27 @@ function loadItens() {
     });
 
     getTotal();
+
 }
 
 function getTotal() {
-    const totalE = items.filter((item) => item.modalidade === "E").map((transaction) => Number(transaction.pnumber));
-    const totalS = items.filter((item) => item.modalidade === "S").map((transaction) => Number(transaction.gnumber));
+    const totalE = items.filter((item) => item.modalidade === "E").map((transaction) => Number(transaction.valor));
+    const totalS = items.filter((item) => item.modalidade === "S").map((transaction) => Number(transaction.valor));
     const totalTe = totalE.reduce((acc, cur) => acc + cur, 0).toFixed(2);
     const totalTs = Math.abs(totalS.reduce((acc, cur) => acc + cur, 0)).toFixed(2);
 
     const totalItems = (totalTe - totalTs).toFixed(2);
+
+    let checkdalert = document.querySelector('#checkd-alert');
+    if (totalItems < 0) {
+
+        checkdalert.innerHTML = `<ion-icon id="alert" name="alert-circle"></ion-icon>`;
+
+
+    } else {
+
+        checkdalert.innerHTML = `<ion-icon id="checkd" name="checkmark-circle"></ion-icon>`;
+    }
 
     pnumber.innerHTML = totalTe;
     gnumber.innerHTML = totalTs;
