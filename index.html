@@ -21,18 +21,18 @@
                         Proventos
                         <ion-icon name="arrow-up-outline"></ion-icon>
                     </h1>
-                    <p class="p-number">
-                        R$ 0.00
-                    </p>
+                    <p >R$
+                        <span class="p-number"> 0.00<span >
+                     </p>
                 </div>
                 <div class="content__card">
                     <h1 class="gastos">
                         Gastos
                         <ion-icon name="arrow-down-outline"></ion-icon>
                     </h1>
-                    <p class="g-number">
-                        R$ 0.00
-                    </p>
+                    <p >R$
+                        <span class="g-number"> 0.00<span >
+                     </p>
                 </div>
                 <div class="content__card">
                     <h1>
@@ -40,8 +40,8 @@
                         <ion-icon name="checkmark-circle"></ion-icon>
                         <ion-icon name="alert-circle"></ion-icon>
                     </h1>
-                    <p class="s-number">
-                        R$ 0.00
+                    <p >R$
+                       <span class="s-number"> 0.00<span >
                     </p>
                 </div>
             </section>
@@ -62,14 +62,14 @@
                     <i></i>
                 </div>
                 <div class="content___desc___radio">
-                    <input type="radio" name="modalidade" id="r-entrada" value="Entrada">
-                    <span>
+                    <input type="radio" name="modalidade" id="r-entrada" value="E" checked>
+                    <label for="r-entrada">
                         Entrada
-                    </span>
-                    <input type="radio" name="modalidade" id="r-entrada" value="Saida">
-                    <span>
+                    </label>
+                    <input type="radio" name="modalidade" id="r-saida" value="S">
+                    <label for="r-saida">
                         Saida
-                    </span>
+                    </label>
                 </div>
                 <button class="content___desc___button" type="submit" id="btn">
                     <ion-icon name="add-circle-outline"></ion-icon>
@@ -77,27 +77,15 @@
                 </button>
             </div>
             <div class="content___table">
-                <table>
-                    <tr>
+                <table id-="Tabela" >
+                    <thead>
                         <th>Descrição</th>
                         <th class="t-valor">Valor</th>
                         <th class="t-data">Data</th>
                         <th class="t-status">Status</th>
                         <th class="t-opcoes">Opções</th>
-                    </tr>
-                    <!-- <tr>
-                        <td> Salario</td>
-                        <td> R$ 2000,00</td>
-                        <td> 24/08/2023</td>
-                        <td class="icon-up-down">
-                            <ion-icon name="caret-up"></ion-icon>
-                            <ion-icon name="caret-down"></ion-icon>
-                        </td>
-                        <td class="btn-actions">
-                            <ion-icon name="create-outline"></ion-icon>
-                            <ion-icon name="trash-outline"></ion-icon>
-                        </td>
-                    </tr> -->
+                    </thead>
+
                     <tbody></tbody>
                 </table>
             </div>

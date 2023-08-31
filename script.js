@@ -4,39 +4,44 @@ const pnumber = document.querySelector(".p-number");
 const gnumber = document.querySelector(".g-number");
 const snumber = document.querySelector(".s-number");
 
-const desc = document.querySelector("#desc");
-const valor = document.querySelector("#valor");
-const rentrada = document.querySelector("#r-entrada");
-const rsaida = document.querySelector("#r-saida");
-const btn = document.getElementById("btn");
 
-const tvalor = document.querySelector(".t-valor");
-const tdata = document.querySelector(".t-data");
-const tstatus = document.querySelector(".t-status");
-const topcoes = document.querySelector(".t-opcoes");
+const btn = document.querySelector("#btn");
 const tbody = document.querySelector("tbody");
 
-let items
+
+let items = [];
 
 btn.onclick = () => {
-    if (desc.value === "" || valor.value === "" || rentrada.value === "") {
-      return alert("Preencha todos os campos!");
+
+    const desc = document.querySelector("#desc");
+    const valor = document.querySelector("#valor");
+    const modalidade = document.querySelector('input[name="modalidade"]:checked');
+
+    if (desc.value === "" || valor.value === "") {
+        return alert("Preencha todos os campos!");
+
+
     }
-  
-    items.push({
-      desc: desc.value,
-      valor: Math.abs(valor.value).toFixed(2),
-      rentrada: rentrada.value,
+
+    items.unshift({
+
+        desc: desc.value,
+        valor: Math.abs(valor.value).toFixed(2),
+        modalidade: modalidade.value
+
     });
-  
+
+    // console.log(modalidade.value)
+
     setItensBD();
-  
+
     loadItens();
-  
+
     desc.value = "";
     valor.value = "";
-  };
-  
+
+};
+
 
 function deleteItem(index) {
     items.splice(index, 1);
@@ -46,24 +51,28 @@ function deleteItem(index) {
 
 
 function insertItem(item, index) {
+
+    const desc = document.querySelector("#desc");
+    const valor = document.querySelector("#valor");
+    const modalidade = document.querySelector('input[name="modalidade"]:checked').value;
+
     let tr = document.createElement("tr");
 
-    tr.innerHTML = `
+    tr.innerHTML = (`
 <td>${item.desc}</td>
-<td>${item.tvalor}</td>
-<td>${item.formtdata()}</td>
-<td class= "icon-up-down">${item.rentrada === "Entrada"
-            ? '<ion-icon name="caret-up"></ion-icon> '
-            : '<ion-icon name="caret-down"></ion-icon>'}</td>
+<td>${item.valor}</td>
+<td>${formtdata()}</td>
+<td class= "icon-up-down">${item.modalidade === "E"
+            ? '<ion-icon id="icon-up" name="caret-up"></ion-icon>'
+            : '<ion-icon id="icon-down" name="caret-down"></ion-icon>'}
+            </td>
 <td class="btn-actions">
-    '<ion-icon name="create-outline"></ion-icon>'
-    '<ion-icon name="trash-outline"></ion-icon>'
-</td>`;
+    <button id="btn-editar" onclick="editarItem(${index})"><ion-icon name="create-outline"></ion-icon>
+    <button id="btn-delete" onclick="deleteItem(${index})"><ion-icon name="trash-outline"></ion-icon></button>
+</td>`);
 
     tbody.appendChild(tr)
-
 }
-
 
 function loadItens() {
     items = getItensBD();
@@ -76,8 +85,8 @@ function loadItens() {
 }
 
 function getTotal() {
-    const totalE = items.filter((item) => item.topcoes === "Entrada").map((transaction) => Number(transaction.tvalor));
-    const totalS = items.filter((item) => item.topcoes === "Saida").map((transaction) => Number(transaction.tvalor));
+    const totalE = items.filter((item) => item.modalidade === "E").map((transaction) => Number(transaction.pnumber));
+    const totalS = items.filter((item) => item.modalidade === "S").map((transaction) => Number(transaction.gnumber));
     const totalTe = totalE.reduce((acc, cur) => acc + cur, 0).toFixed(2);
     const totalTs = Math.abs(totalS.reduce((acc, cur) => acc + cur, 0)).toFixed(2);
 
@@ -87,7 +96,6 @@ function getTotal() {
     gnumber.innerHTML = totalTs;
     snumber.innerHTML = totalItems;
 }
-
 const getItensBD = () => JSON.parse(localStorage.getItem("bd_items")) ?? [];
 const setItensBD = () => localStorage.setItem("bd_items", JSON.stringify(items));
 

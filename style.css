@@ -270,29 +270,32 @@ td {
     cursor: pointer;
 
 }
+#btn-delete{
+    border: none;
+    background-color: transparent;
+}
+#btn-editar{
+    border: none;
+    background-color: transparent;
+}
 
-
-.btn-actions ion-icon:nth-child(odd):hover {
+#btn-editar:hover {
     color: rgb(87, 155, 112);
     transform: scale(1.5);
     transition: .2s;
 }
 
-.btn-actions ion-icon:nth-child(even):hover {
+#btn-delete:hover {
     color: rgb(231, 32, 25);
     transform: scale(1.5);
     transition: .2s;
 }
 
-.icon-up-down ion-icon:nth-child(odd) {
-    color: green;
-
+#icon-up{
+    color:green;
 }
-
-.icon-up-down ion-icon:nth-child(even) {
+#icon-down{
     color: red;
-    display: none;
-
 }
 
 .content___table ion-icon {
