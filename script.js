@@ -53,17 +53,19 @@ btn.onclick = () => {
 // EVENT DELETE
 
 function deleteItem(index) {
-    items.splice(index, 1);
-    setItensBD();
-    loadItens();
+
 
     let userConfirmation = confirm("Você tem certeza de que deseja deletar este item?");
 
     // Se o usuário confirmou a exclusão
     if (userConfirmation) {
         // Delete o item
+        items.splice(index, 1);
+        setItensBD();
+        loadItens();
         // Código para deletar o item vai aqui
         console.log(`Item ${index} deletado.`);
+
     }
     // Se o usuário cancelou a exclusão
     else {
@@ -186,7 +188,7 @@ function getTotal() {
     gnumber.innerHTML = formatmoney(Number(totalTs));
     snumber.innerHTML = formatmoney(Number(totalItems));
 }
-    
+
 
 // END EVENT OF INSERTING
 const getItensBD = () => JSON.parse(localStorage.getItem("bd_items")) ?? [];
