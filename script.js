@@ -11,6 +11,8 @@ const tbody = document.querySelector("tbody");
 
 let items = [];
 
+// EVENT BUTTON
+
 btn.onclick = () => {
 
     const desc = document.querySelector("#desc");
@@ -31,8 +33,6 @@ btn.onclick = () => {
 
     });
 
-    // console.log(modalidade.value)
-
     setItensBD();
 
     loadItens();
@@ -41,14 +41,70 @@ btn.onclick = () => {
     valor.value = "";
 
 };
+// END EVENT BUTTON
 
+// EVENT DELETE
 
 function deleteItem(index) {
     items.splice(index, 1);
     setItensBD();
     loadItens();
+
+    let userConfirmation = confirm("Você tem certeza de que deseja deletar este item?");
+  
+  // Se o usuário confirmou a exclusão
+  if(userConfirmation) {
+    // Delete o item
+    // Código para deletar o item vai aqui
+    console.log(`Item ${index} deletado.`);
+  }
+  // Se o usuário cancelou a exclusão
+  else {
+    // Não faça nada
+    console.log('Operação de exclusão cancelada.');
+    
+  }
 }
 
+// END EVENT OF DELETE
+
+// EVENT EDIT
+function editarItem(index){
+
+    openModal(true, index)
+}
+
+function openModal(edit = false, index = 0) {
+    const contentdesc = document.querySelectorAll('content__desc')
+    const desc = document.querySelector("#desc");
+    const valor = document.querySelector("#valor");
+    const modalidade = document.querySelector('input[name="modalidade"]:checked');
+
+
+  
+    contentdesc.onclick = e => {
+      if (e.target.className.indexOf('content__desc') !== -1) {
+        contentdesc.classList.remove('active')
+      }
+    }
+  
+    if (edit) {
+      desc.value = items[index].desc
+      valor.value = items[index].valor
+      modalidade.value = items[index].modalidade
+      id = index
+    } else {
+        desc.value = ''
+        valor.value = ''
+        modalidade.value = ''
+    }
+    
+  }
+  
+// END EVENT OF EDIT
+
+
+// EVENT INSERT
 
 function insertItem(item, index) {
 
@@ -60,7 +116,7 @@ function insertItem(item, index) {
 
     tr.innerHTML = (`
 <td>${item.desc}</td>
-<td>${item.valor}</td>
+<td>R$ ${item.valor}</td>
 <td>${formtdata()}</td>
 <td class= "icon-up-down">${item.modalidade === "E"
             ? '<ion-icon id="icon-up" name="caret-up"></ion-icon>'
@@ -84,6 +140,9 @@ function loadItens() {
     getTotal();
 
 }
+//  END EVENT OF INSERT
+
+// EVENT OF INSERTING DATA ON THE CARD
 
 function getTotal() {
     const totalE = items.filter((item) => item.modalidade === "E").map((transaction) => Number(transaction.valor));
@@ -104,10 +163,26 @@ function getTotal() {
         checkdalert.innerHTML = `<ion-icon id="checkd" name="checkmark-circle"></ion-icon>`;
     }
 
+    if (totalItems < 0) {
+        document.getElementById('saldo').style.color = "red";
+
+
+    } else {
+        document.getElementById('saldo').style.color = "black";
+
+    }
+
+
+
     pnumber.innerHTML = totalTe;
     gnumber.innerHTML = totalTs;
     snumber.innerHTML = totalItems;
 }
+
+// END EVENT OF INSERTING
+
+c
+
 const getItensBD = () => JSON.parse(localStorage.getItem("bd_items")) ?? [];
 const setItensBD = () => localStorage.setItem("bd_items", JSON.stringify(items));
 
@@ -124,4 +199,4 @@ function formtdata() {
 
     return `${dia}/${meses}/${ano}`
 }
-
+// END LOCALSTORE & FORMAT DATE
