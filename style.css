@@ -15,8 +15,8 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    
-    
+
+
 }
 
 /* end Body */
@@ -78,20 +78,18 @@ body {
     transition: .2s;
 }
 
-.icon-p{
+.icon-p {
     color: green;
 }
 
-#checkd{
+#checkd {
     color: green;
 }
 
 #alert {
     color: red;
-  
+
 }
-
-
 
 .content__card h1 {
     text-align: center;
@@ -145,7 +143,6 @@ body {
     z-index: 1;
     padding: 5px;
 
-
 }
 
 input[type=number]::-webkit-inner-spin-button,
@@ -196,26 +193,41 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .content___desc___button {
-    display: flex;
-    justify-content: center;
-    border-radius: 2em;
-    background-color: rgb(104, 180, 132);
-    text-align: center;
-    gap: .7rem;
-    border: none;
-    width: 10em;
-    height: 2em;
-    font-size: 16px;
     font-weight: bold;
-    align-items: center;
+    background-color: rgb(104, 180, 132);
     cursor: pointer;
     outline: none;
+    border: none;
+    font-size: 16px;
+    gap: .7rem;
     color: #E7E9EB;
+    border-radius: 2em;
+    width: 8em;
+    height: 2em;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    display: flex;
+
 }
 
 .content___desc___button ion-icon {
     width: 20px;
     height: 20px;
+}
+
+#btncontet {
+
+    justify-content: center;
+    border-radius: 2em;
+    background-color: rgb(104, 180, 132);
+    text-align: center;
+    font-weight: bold;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+
+
 }
 
 .content___desc___button:active {
@@ -273,11 +285,13 @@ td {
     cursor: pointer;
 
 }
-#btn-delete{
+
+#btn-delete {
     border: none;
     background-color: transparent;
 }
-#btn-editar{
+
+#btn-editar {
     border: none;
     background-color: transparent;
 }
@@ -294,10 +308,11 @@ td {
     transition: .2s;
 }
 
-#icon-up{
-    color:green;
+#icon-up {
+    color: green;
 }
-#icon-down{
+
+#icon-down {
     color: red;
 }
 

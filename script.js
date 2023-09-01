@@ -10,6 +10,7 @@ const tbody = document.querySelector("tbody");
 
 
 let items = [];
+let id
 
 // EVENT BUTTON
 
@@ -19,19 +20,25 @@ btn.onclick = () => {
     const valor = document.querySelector("#valor");
     const modalidade = document.querySelector('input[name="modalidade"]:checked');
 
-    if (desc.value === "" || valor.value === "") {
+    if (desc.value === "" || valor.value === "" || modalidade.value === "") {
         return alert("Preencha todos os campos!");
-
+    }
+    if (id !== undefined) {
+        items[id].desc = desc.value
+        items[id].valor = valor.value
+        items[id].modalidade = modalidade.value
+    } else {
+        items.unshift({ 'desc': desc.value, 'valor': valor.value, 'modalidade': modalidade.value })
 
     }
 
-    items.unshift({
+    // items.unshift({
 
-        desc: desc.value,
-        valor: Math.abs(valor.value).toFixed(2),
-        modalidade: modalidade.value
+    //     desc: desc.value,
+    //     valor: Math.abs(valor.value).toFixed(2),
+    //     modalidade: modalidade.value
 
-    });
+    // });
 
     setItensBD();
 
@@ -51,25 +58,26 @@ function deleteItem(index) {
     loadItens();
 
     let userConfirmation = confirm("Você tem certeza de que deseja deletar este item?");
-  
-  // Se o usuário confirmou a exclusão
-  if(userConfirmation) {
-    // Delete o item
-    // Código para deletar o item vai aqui
-    console.log(`Item ${index} deletado.`);
-  }
-  // Se o usuário cancelou a exclusão
-  else {
-    // Não faça nada
-    console.log('Operação de exclusão cancelada.');
-    
-  }
+
+    // Se o usuário confirmou a exclusão
+    if (userConfirmation) {
+        // Delete o item
+        // Código para deletar o item vai aqui
+        console.log(`Item ${index} deletado.`);
+    }
+    // Se o usuário cancelou a exclusão
+    else {
+        // Não faça nada
+
+        console.log('Operação de exclusão cancelada.');
+
+    }
 }
 
 // END EVENT OF DELETE
 
 // EVENT EDIT
-function editarItem(index){
+function editarItem(index) {
 
     openModal(true, index)
 }
@@ -81,26 +89,29 @@ function openModal(edit = false, index = 0) {
     const modalidade = document.querySelector('input[name="modalidade"]:checked');
 
 
-  
+
     contentdesc.onclick = e => {
-      if (e.target.className.indexOf('content__desc') !== -1) {
-        contentdesc.classList.remove('active')
-      }
+        if (e.target.className.indexOf('content__desc') !== -1) {
+            contentdesc.classList.remove('active')
+        }
     }
-  
+
     if (edit) {
-      desc.value = items[index].desc
-      valor.value = items[index].valor
-      modalidade.value = items[index].modalidade
-      id = index
+        desc.value = items[index].desc
+        valor.value = items[index].valor
+        modalidade.value = items[index].modalidade
+        id = index
     } else {
         desc.value = ''
         valor.value = ''
         modalidade.value = ''
     }
-    
-  }
-  
+
+}
+
+
+
+
 // END EVENT OF EDIT
 
 
@@ -116,7 +127,7 @@ function insertItem(item, index) {
 
     tr.innerHTML = (`
 <td>${item.desc}</td>
-<td>R$ ${item.valor}</td>
+<td> ${formatmoney(Number(item.valor))}</td>
 <td>${formtdata()}</td>
 <td class= "icon-up-down">${item.modalidade === "E"
             ? '<ion-icon id="icon-up" name="caret-up"></ion-icon>'
@@ -157,7 +168,6 @@ function getTotal() {
 
         checkdalert.innerHTML = `<ion-icon id="alert" name="alert-circle"></ion-icon>`;
 
-
     } else {
 
         checkdalert.innerHTML = `<ion-icon id="checkd" name="checkmark-circle"></ion-icon>`;
@@ -172,17 +182,13 @@ function getTotal() {
 
     }
 
-
-
-    pnumber.innerHTML = totalTe;
-    gnumber.innerHTML = totalTs;
-    snumber.innerHTML = totalItems;
+    pnumber.innerHTML = formatmoney(Number(totalTe));
+    gnumber.innerHTML = formatmoney(Number(totalTs));
+    snumber.innerHTML = formatmoney(Number(totalItems));
 }
+    
 
 // END EVENT OF INSERTING
-
-c
-
 const getItensBD = () => JSON.parse(localStorage.getItem("bd_items")) ?? [];
 const setItensBD = () => localStorage.setItem("bd_items", JSON.stringify(items));
 
@@ -200,3 +206,5 @@ function formtdata() {
     return `${dia}/${meses}/${ano}`
 }
 // END LOCALSTORE & FORMAT DATE
+loadItens();
+
