@@ -10,7 +10,7 @@ const tbody = document.querySelector("tbody");
 
 
 let items = [];
-let id
+
 
 // EVENT BUTTON
 
@@ -18,27 +18,25 @@ btn.onclick = (e) => {
 
     e.preventDefault()
 
+    let formid = document.getElementById('formid');
+
     const desc = document.querySelector("#desc");
     const valor = document.querySelector("#valor");
     const modalidade = document.querySelector('input[name="modalidade"]:checked');
 
-
-
     if (desc.value === "" || valor.value === "" || modalidade.value === "") {
         return alert("Preencha todos os campos!");
     }
-    if (id !== undefined) {
-        items[id].desc = desc.value
-        items[id].valor = valor.value
-        items[id].modalidade = modalidade.value
+    if (formid.value !== '') {
+        items[formid.value].desc = desc.value
+        items[formid.value].valor = valor.value
+        items[formid.value].modalidade = modalidade.value
     } else {
         items.unshift({ 'desc': desc.value, 'valor': valor.value, 'modalidade': modalidade.value })
 
     }
-    document.getElementById('btn').innerHTML = `
-        <ion-icon name="add-circle-outline"></ion-icon>
-                                        Salvar
-        `;
+
+    limparform();
 
     setItensBD();
 
@@ -47,7 +45,7 @@ btn.onclick = (e) => {
     desc.value = "";
     valor.value = "";
 
-};
+}
 // END EVENT BUTTON
 
 // EVENT DELETE
@@ -68,7 +66,7 @@ function deleteItem(index) {
         console.log('Operação de exclusão cancelada.');
 
     }
-};
+}
 
 // END EVENT OF DELETE
 
@@ -79,18 +77,8 @@ function editarItem(edit = true, index = 0) {
     let formid = document.getElementById('formid');
 
     if (formid.value === index.toString()) {
-        desc.value = ''
-        valor.value = ''
-        formid.value = ''
-        document.querySelector('#r-saida').checked = false
-        document.querySelector('#r-entrada').checked = false
-
-        document.getElementById('btn').innerHTML = `
-        <ion-icon name="add-circle-outline"></ion-icon>
-                                        Salvar
-        `;
-
-        return
+        limparform();
+        return;
     }
     if (edit) {
 
@@ -113,8 +101,27 @@ function editarItem(edit = true, index = 0) {
         Editar`;
     }
 
-};
+}
 // END EVENT OF EDIT
+
+function limparform() {
+
+    let formid = document.getElementById('formid');
+
+    let desc = document.querySelector("#desc");
+    let valor = document.querySelector("#valor");
+
+    desc.value = ''
+    valor.value = ''
+    formid.value = ''
+    document.querySelector('#r-saida').checked = false
+    document.querySelector('#r-entrada').checked = false
+
+    document.getElementById('btn').innerHTML = `
+        <ion-icon name="add-circle-outline"></ion-icon>
+                                        Salvar
+        `;
+}
 
 // EVENT INSERT
 
@@ -139,7 +146,7 @@ function insertItem(item, index) {
     <button id="btn-delete" onclick="deleteItem(${index})"><ion-icon name="trash-outline"></ion-icon></button>
 </td>`);
 
-    tbody.appendChild(tr)
+    tbody.appendChild(tr);
 }
 
 function loadItens() {
