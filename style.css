@@ -143,6 +143,8 @@ body {
     background: transparent;
     z-index: 1;
     padding: 5px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
 
 }
 
@@ -326,7 +328,7 @@ td {
 /* END TABELA */
 
 /*start FOOTER */
-.content__footer {
+footer {
     display: flex;
     position: relative;
     justify-content: space-between;

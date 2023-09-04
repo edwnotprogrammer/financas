@@ -52,7 +52,8 @@
                                     </p>
                                 </div>
                             </section>
-                            <div class="content__section__desc">
+                            <form class="content__section__desc">
+                                <input type="hidden" id="formid">
                                 <div class="content__desc">
                                     <input type="text" required id="desc">
                                     <span>Descrição</span>
@@ -64,6 +65,7 @@
                                         step="0.01"
                                         required
                                         id="valor"
+                                        requeired
                                     >
                                     <span>Valor</span>
                                     <i></i>
@@ -73,19 +75,21 @@
                                         <input
                                             type="radio"
                                             name="modalidade"
-                                            id="modalidade-e"
+                                            id="r-entrada"
                                             value="E"
+                                            required
                                         >
-                                        <label for="modalidade-e">
+                                        <label for="r-entrada">
                                             Entrada
                                         </label>
                                         <input
                                             type="radio"
                                             name="modalidade"
-                                            id="modaldiade-s"
+                                            id="r-saida"
                                             value="S"
+                                            required
                                         >
-                                        <label for="modaldiade-s">
+                                        <label for="r-saida">
                                             Saida
                                         </label>
                                     </div>
@@ -96,7 +100,7 @@
                                         Salvar
                                     </button>
                                 </div>
-                            </div>
+                            </form>
                             <div class="content___table">
                                 <table id-="Tabela">
                                     <thead>
@@ -110,7 +114,7 @@
                                 </table>
                             </div>
                         </main>
-                        <footer class="content__footer">
+                        <footer>
                             <div class="devdu">
                                 DevDu 2023, © Copyright - Todos os Direitos Reservados.
                             </div>

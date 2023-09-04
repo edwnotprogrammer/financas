@@ -14,11 +14,15 @@ let id
 
 // EVENT BUTTON
 
-btn.onclick = () => {
+btn.onclick = (e) => {
+
+    e.preventDefault()
 
     const desc = document.querySelector("#desc");
     const valor = document.querySelector("#valor");
     const modalidade = document.querySelector('input[name="modalidade"]:checked');
+
+
 
     if (desc.value === "" || valor.value === "" || modalidade.value === "") {
         return alert("Preencha todos os campos!");
@@ -31,6 +35,10 @@ btn.onclick = () => {
         items.unshift({ 'desc': desc.value, 'valor': valor.value, 'modalidade': modalidade.value })
 
     }
+    document.getElementById('btn').innerHTML = `
+        <ion-icon name="add-circle-outline"></ion-icon>
+                                        Salvar
+        `;
 
     setItensBD();
 
@@ -48,63 +56,65 @@ function deleteItem(index) {
 
     let userConfirmation = confirm("Você tem certeza de que deseja deletar este item?");
 
-    // Se o usuário confirmou a exclusão
     if (userConfirmation) {
-        // Delete o item
         items.splice(index, 1);
         setItensBD();
         loadItens();
-        // Código para deletar o item vai aqui
         console.log(`Item ${index} deletado.`);
 
     }
-    // Se o usuário cancelou a exclusão
     else {
-        // Não faça nada
 
         console.log('Operação de exclusão cancelada.');
 
     }
-}
+};
 
 // END EVENT OF DELETE
 
 // EVENT EDIT
 
 function editarItem(edit = true, index = 0) {
-    const contentdesc = document.querySelectorAll('content__desc')
-    const desc = document.querySelector("#desc");
-    const valor = document.querySelector("#valor");
-    const modalidade = document.querySelector('input[name="modalidade"]');
 
-    if (modalidade == "E") {
-        document.getElementById('modalidade-e');
-    }else{
-        document.getElementById('modalidade-s');
-    }
-         console.log(modalidade.value);
+    let formid = document.getElementById('formid');
 
-    contentdesc.onclick = e => {
-        if (e.target.classList.indexOf('content__desc') !== -1) {
-            contentdesc.classList.remove('active')
-        }
-    }
-   
-    if (edit) {
-        desc.value = items[index].desc
-        valor.value = items[index].valor
-        modalidade.checked = true 
-    } else {
+    if (formid.value === index.toString()) {
         desc.value = ''
         valor.value = ''
-        modalidade.value = ''
+        formid.value = ''
+        document.querySelector('#r-saida').checked = false
+        document.querySelector('#r-entrada').checked = false
+
+        document.getElementById('btn').innerHTML = `
+        <ion-icon name="add-circle-outline"></ion-icon>
+                                        Salvar
+        `;
+
+        return
+    }
+    if (edit) {
+
+        formid.value = index.toString();
+
+        const desc = document.querySelector("#desc");
+        const valor = document.querySelector("#valor");
+
+
+        if (items[index].modalidade === 'E') {
+            document.querySelector('#r-entrada').checked = true
+        } else {
+            document.querySelector('#r-saida').checked = true
+        }
+        desc.value = items[index].desc
+        valor.value = items[index].valor
+        id = index
+
+        document.getElementById('btn').innerHTML = `<ion-icon name="create-outline"></ion-icon>
+        Editar`;
     }
 
-}
-
-
+};
 // END EVENT OF EDIT
-
 
 // EVENT INSERT
 
