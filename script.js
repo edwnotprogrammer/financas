@@ -32,14 +32,6 @@ btn.onclick = () => {
 
     }
 
-    // items.unshift({
-
-    //     desc: desc.value,
-    //     valor: Math.abs(valor.value).toFixed(2),
-    //     modalidade: modalidade.value
-
-    // });
-
     setItensBD();
 
     loadItens();
@@ -53,7 +45,6 @@ btn.onclick = () => {
 // EVENT DELETE
 
 function deleteItem(index) {
-
 
     let userConfirmation = confirm("Você tem certeza de que deseja deletar este item?");
 
@@ -79,30 +70,30 @@ function deleteItem(index) {
 // END EVENT OF DELETE
 
 // EVENT EDIT
-function editarItem(index) {
 
-    openModal(true, index)
-}
-
-function openModal(edit = false, index = 0) {
+function editarItem(edit = true, index = 0) {
     const contentdesc = document.querySelectorAll('content__desc')
     const desc = document.querySelector("#desc");
     const valor = document.querySelector("#valor");
-    const modalidade = document.querySelector('input[name="modalidade"]:checked');
+    const modalidade = document.querySelector('input[name="modalidade"]');
 
-
+    if (modalidade == "E") {
+        document.getElementById('modalidade-e');
+    }else{
+        document.getElementById('modalidade-s');
+    }
+         console.log(modalidade.value);
 
     contentdesc.onclick = e => {
-        if (e.target.className.indexOf('content__desc') !== -1) {
+        if (e.target.classList.indexOf('content__desc') !== -1) {
             contentdesc.classList.remove('active')
         }
     }
-
+   
     if (edit) {
         desc.value = items[index].desc
         valor.value = items[index].valor
-        modalidade.value = items[index].modalidade
-        id = index
+        modalidade.checked = true 
     } else {
         desc.value = ''
         valor.value = ''
@@ -110,8 +101,6 @@ function openModal(edit = false, index = 0) {
     }
 
 }
-
-
 
 
 // END EVENT OF EDIT
@@ -123,7 +112,7 @@ function insertItem(item, index) {
 
     const desc = document.querySelector("#desc");
     const valor = document.querySelector("#valor");
-    const modalidade = document.querySelector('input[name="modalidade"]:checked').value;
+    const modalidade = document.querySelector('input[name="modalidade"]:checked');
 
     let tr = document.createElement("tr");
 
@@ -136,7 +125,7 @@ function insertItem(item, index) {
             : '<ion-icon id="icon-down" name="caret-down"></ion-icon>'}
             </td>
 <td class="btn-actions">
-    <button id="btn-editar" onclick="editarItem(${index})"><ion-icon name="create-outline"></ion-icon>
+    <button id="btn-editar" onclick="editarItem(true, ${index})"><ion-icon name="create-outline"></ion-icon>
     <button id="btn-delete" onclick="deleteItem(${index})"><ion-icon name="trash-outline"></ion-icon></button>
 </td>`);
 

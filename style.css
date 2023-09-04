@@ -131,6 +131,7 @@ body {
     display: flex;
     justify-content: space-between;
     position: relative;
+    gap: 1.5rem;
 }
 
 .content__desc input {
