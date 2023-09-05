@@ -42,8 +42,6 @@ btn.onclick = (e) => {
 
     loadItens();
 
-    desc.value = "";
-    valor.value = "";
 
 }
 // END EVENT BUTTON
@@ -104,6 +102,8 @@ function editarItem(edit = true, index = 0) {
 }
 // END EVENT OF EDIT
 
+// EVENTE CLEAR FORM
+
 function limparform() {
 
     let formid = document.getElementById('formid');
@@ -122,6 +122,7 @@ function limparform() {
                                         Salvar
         `;
 }
+// END EVENT CLEAR FORM
 
 // EVENT INSERT
 
