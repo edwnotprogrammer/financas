@@ -173,13 +173,15 @@ function getTotal() {
     const totalItems = (totalTe - totalTs).toFixed(2);
 
     let checkdalert = document.querySelector('#checkd-alert');
+
     if (totalItems < 0) {
 
         checkdalert.innerHTML = `<ion-icon id="alert" name="alert-circle"></ion-icon>`;
 
-    } else {
+    } else if (totalItems > 0) {
 
         checkdalert.innerHTML = `<ion-icon id="checkd" name="checkmark-circle"></ion-icon>`;
+
     }
 
     if (totalItems < 0) {
@@ -214,6 +216,7 @@ function formtdata() {
 
     return `${dia}/${meses}/${ano}`
 }
+
 // END LOCALSTORE & FORMAT DATE
 loadItens();
 
