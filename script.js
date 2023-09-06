@@ -182,6 +182,10 @@ function getTotal() {
 
         checkdalert.innerHTML = `<ion-icon id="checkd" name="checkmark-circle"></ion-icon>`;
 
+    } else {
+
+        checkdalert.innerHTML = `<ion-icon name="wallet-outline"></ion-icon>`;
+
     }
 
     if (totalItems < 0) {
@@ -196,6 +200,8 @@ function getTotal() {
     pnumber.innerHTML = formatmoney(Number(totalTe));
     gnumber.innerHTML = formatmoney(Number(totalTs));
     snumber.innerHTML = formatmoney(Number(totalItems));
+
+
 }
 
 
