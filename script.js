@@ -43,8 +43,6 @@ btn.onclick = (e) => {
 
     loadItens();
 
-    desc.value = "";
-    valor.value = "";
 
   
 }
@@ -109,6 +107,8 @@ function editarItem(edit = true, index = 0) {
 }
 // END EVENT OF EDIT
 
+// EVENTE CLEAR FORM
+
 function limparform() {
 
     let formid = document.getElementById('formid');
@@ -127,6 +127,7 @@ function limparform() {
                                         Salvar
         `;
 }
+// END EVENT CLEAR FORM
 
 // EVENT INSERT
 
@@ -177,13 +178,19 @@ function getTotal() {
     const totalItems = (totalTe - totalTs).toFixed(2);
 
     let checkdalert = document.querySelector('#checkd-alert');
+
     if (totalItems < 0) {
 
         checkdalert.innerHTML = `<ion-icon id="alert" name="alert-circle"></ion-icon>`;
 
-    } else {
+    } else if (totalItems > 0) {
 
         checkdalert.innerHTML = `<ion-icon id="checkd" name="checkmark-circle"></ion-icon>`;
+
+    } else {
+
+        checkdalert.innerHTML = `<ion-icon name="wallet-outline"></ion-icon>`;
+
     }
 
     if (totalItems < 0) {
@@ -198,6 +205,8 @@ function getTotal() {
     pnumber.innerHTML = formatmoney(Number(totalTe));
     gnumber.innerHTML = formatmoney(Number(totalTs));
     snumber.innerHTML = formatmoney(Number(totalItems));
+
+
 }
 
 
@@ -218,6 +227,7 @@ function formtdata() {
 
     return `${dia}/${meses}/${ano}`
 }
+
 // END LOCALSTORE & FORMAT DATE
 loadItens();
 
