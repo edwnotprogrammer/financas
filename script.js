@@ -27,6 +27,7 @@ btn.onclick = (e) => {
     if (desc.value === "" || valor.value === "" || modalidade.value === "") {
         return alert("Preencha todos os campos!");
     }
+
     if (formid.value !== '') {
         items[formid.value].desc = desc.value
         items[formid.value].valor = valor.value
@@ -45,6 +46,7 @@ btn.onclick = (e) => {
     desc.value = "";
     valor.value = "";
 
+  
 }
 // END EVENT BUTTON
 
@@ -93,14 +95,17 @@ function editarItem(edit = true, index = 0) {
         } else {
             document.querySelector('#r-saida').checked = true
         }
+
         desc.value = items[index].desc
         valor.value = items[index].valor
         id = index
 
         document.getElementById('btn').innerHTML = `<ion-icon name="create-outline"></ion-icon>
         Editar`;
-    }
 
+
+    }
+    
 }
 // END EVENT OF EDIT
 
