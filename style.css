@@ -274,7 +274,12 @@ table {
 
 }
 
-
+.btn_excel{
+    background-color: transparent;
+    border: 0px;
+    align-items: center;
+    padding-top: 5px;
+}
 
 .content___table th,
 td {
