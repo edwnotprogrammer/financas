@@ -16,8 +16,8 @@ function htmlTableToExcel(){
 
         let record = [];
         record.push(line.desc);
-        record.push(line.modalidade === 'E' ? 'ENTRADA' : 'SAIDA');
         record.push(line.valor);
+        record.push(line.modalidade === 'E' ? 'ENTRADA' : 'SAIDA');
         // record.push(line.data);
         excelLines.push(record);
     }
