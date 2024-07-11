@@ -1,126 +1,119 @@
 /* start ALL */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 /* end ALL */
 
 /* start Body */
 body {
-    background-color: #F2F2F2;
-    color: black;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    overflow-x: hidden; 
-
+  background-color: #f2f2f2;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 html ::-webkit-scrollbar {
-    width: 5px;
-  }
-  html ::-webkit-scrollbar-thumb {
-    border-radius: 5px;
-    background: #68B484;
-  }
-  html ::-webkit-scrollbar-track {
-    background: #ededed;
-   
-  }
+  width: 5px;
+}
+html ::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #68b484;
+}
+html ::-webkit-scrollbar-track {
+  background: #ededed;
+}
 
 /* end Body */
 
 /* start Header */
 .content__header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 0 50px;
-    background-color: #68B484;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0 50px;
+  background-color: #68b484;
 }
 
 .content__header img {
-    justify-content: center;
+  justify-content: center;
 }
 
 /* end Header */
 
-
 /* start Main */
 
 .content__main {
-    width: min(90vw, 850px);
-    margin: auto;
-    flex: 1 1 0;
+  width: min(90vw, 850px);
+  margin: auto;
+  flex: 1 1 0;
 }
 
 /* end Main */
 
 /* start Section */
 .content__section {
-    display: flex;
-    margin-top: -40px;
-    justify-content: center;
-    gap: 2.5rem;
-    text-align: center;
-    align-items: center;
+  display: flex;
+  margin-top: -40px;
+  justify-content: center;
+  gap: 2.5rem;
+  text-align: center;
+  align-items: center;
 }
 
 .content__card {
-    background-color: white;
-    border-radius: 3px;
-    width: 400px;
-    height: 90px;
-    box-shadow: 5px 5px 5px gray;
-    border: .5px solid black;
-
+  background-color: white;
+  border-radius: 3px;
+  width: 400px;
+  height: 90px;
+  box-shadow: 5px 5px 5px gray;
+  border: 0.5px solid black;
 }
 
 .content__card ion-icon {
-    width: 25px;
-    height: 25px;
-
+  width: 25px;
+  height: 25px;
 }
 
 .content__card:hover {
-    transform: translateY(-.65rem);
-    transition: .2s;
+  transform: translateY(-0.65rem);
+  transition: 0.2s;
 }
 
 .icon-p {
-    color: green;
+  color: green;
 }
 
 #checkd {
-    color: green;
+  color: green;
 }
 
 #alert {
-    color: red;
-
+  color: red;
 }
 
-
 .content__card h1 {
-    text-align: center;
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    font-size: 20px;
-    padding: 10px;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  padding: 10px;
 }
 
 .gastos ion-icon:nth-child(1) {
-    color: red
+  color: red;
 }
 
 .content__card p {
-    align-items: center;
-    font-size: 25px;
-    justify-content: center;
-    font-weight: bolder;
+  align-items: center;
+  font-size: 25px;
+  justify-content: center;
+  font-weight: bolder;
 }
 
 /* end Section */
@@ -128,125 +121,117 @@ html ::-webkit-scrollbar {
 /* start DESCRIÇÃO */
 
 .content__section__desc {
-    display: flex;
-    background: white;
-    padding: 50px;
-    margin-top: 20px;
-    border-radius: 3px;
-    box-shadow: 5px 5px 5px gray;
-    border: .5px solid black;
-    width: 100%;
-    gap: 2rem;
+  display: flex;
+  background: white;
+  padding: 50px;
+  margin-top: 20px;
+  border-radius: 3px;
+  box-shadow: 5px 5px 5px gray;
+  border: 0.5px solid black;
+  width: 100%;
+  gap: 2rem;
 }
 
 .content__desc {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    gap: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  gap: 1.5rem;
 }
 
 .content__desc input {
-    position: relative;
-    border: none;
-    outline: none;
-    color: black;
-    letter-spacing: .05rem;
-    background: transparent;
-    z-index: 1;
-    padding: 5px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
-
+  position: relative;
+  border: none;
+  outline: none;
+  color: black;
+  letter-spacing: 0.05rem;
+  background: transparent;
+  z-index: 1;
+  padding: 5px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-.content__desc input:valid~span,
-.content__desc input:focus~span {
-    font-size: 1rem;
-    transform: translateY(-32px);
-
+.content__desc input:valid ~ span,
+.content__desc input:focus ~ span {
+  font-size: 1rem;
+  transform: translateY(-32px);
 }
-
 
 .content__desc span {
-    position: absolute;
-    left: 0;
-    transition: .3s;
-    padding: 10px 8px;
-    color: black;
-    font-size: 1rem;
-    pointer-events: none;
+  position: absolute;
+  left: 0;
+  transition: 0.3s;
+  padding: 10px 8px;
+  color: black;
+  font-size: 1rem;
+  pointer-events: none;
 }
 
 .content__desc i {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transition: .3s;
-    width: 100%;
-    height: 3px;
-    border-radius: 8px;
-    border: .5px solid rgb(104, 180, 132);
-    pointer-events: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.3s;
+  width: 100%;
+  height: 3px;
+  border-radius: 8px;
+  border: 0.5px solid rgb(104, 180, 132);
+  pointer-events: none;
 }
 
-.content__desc input:valid~i,
-.content__desc input:focus~i {
-    height: 100%;
+.content__desc input:valid ~ i,
+.content__desc input:focus ~ i {
+  height: 100%;
 }
 
 .content___desc___radio {
-    display: flex;
-    padding: 1% 0 0 0;
-    gap: 1.5rem;
+  display: flex;
+  padding: 1% 0 0 0;
+  gap: 1.5rem;
 }
 
 .content___desc___button {
-    font-weight: bold;
-    background-color: rgb(104, 180, 132);
-    cursor: pointer;
-    outline: none;
-    border: none;
-    font-size: 16px;
-    gap: .7rem;
-    color: #E7E9EB;
-    border-radius: 2em;
-    width: 8em;
-    height: 2em;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    display: flex;
-
+  font-weight: bold;
+  background-color: rgb(104, 180, 132);
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  gap: 0.7rem;
+  color: #e7e9eb;
+  border-radius: 2em;
+  width: 8em;
+  height: 2em;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  display: flex;
 }
 
 .content___desc___button ion-icon {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 #btncontet {
-
-    justify-content: center;
-    border-radius: 2em;
-    background-color: rgb(104, 180, 132);
-    text-align: center;
-    font-weight: bold;
-    align-items: center;
-    cursor: pointer;
-    outline: none;
-
-
+  justify-content: center;
+  border-radius: 2em;
+  background-color: rgb(104, 180, 132);
+  text-align: center;
+  font-weight: bold;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
 }
 
 .content___desc___button:active {
-    background-color: #3e8e41;
+  background-color: #3e8e41;
 }
 
 /* end Descrição */
@@ -254,99 +239,95 @@ input[type=number]::-webkit-outer-spin-button {
 /* start TABELA */
 
 .content___table {
-    display: flex;
-    background: white;
-    margin-top: 20px;
-    border-radius: 3px;
-    box-shadow: 5px 5px 5px gray;
-    border: .5px solid black;
-
+  display: flex;
+  background: white;
+  margin-top: 20px;
+  border-radius: 3px;
+  box-shadow: 5px 5px 5px gray;
+  border: 0.5px solid black;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
-    border-radius: 5px;
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5px;
 }
 
 .content___table th {
-    background-color: #68B484;
-
+  background-color: #68b484;
 }
 
-.btn_excel{
-    background-color: transparent;
-    border: 0px;
-    align-items: center;
-    padding-top: 5px;
+.btn_excel {
+  background-color: transparent;
+  border: 0px;
+  align-items: center;
+  padding-top: 5px;
+  margin-right: 1rem;
+  cursor: pointer;
 }
 
 .content___table th,
 td {
-    text-align: center;
-    padding: 5px 10px;
+  text-align: center;
+  padding: 5px 10px;
 }
 
 .content___table th {
-    color: #E7E9EB;
+  color: #e7e9eb;
 }
 
 .content___table tr:nth-child(even) {
-    background-color: #E7E9EB;
-
+  background-color: #e7e9eb;
 }
 
 .button___td {
-    gap: 2rem;
-
+  gap: 2rem;
 }
 
 .btn-actions ion-icon {
-    cursor: pointer;
-
+  cursor: pointer;
 }
 
 #btn-delete {
-    border: none;
-    background-color: transparent;
+  border: none;
+  background-color: transparent;
 }
 
 #btn-editar {
-    border: none;
-    background-color: transparent;
+  border: none;
+  background-color: transparent;
 }
 
 #btn-editar:hover {
-    color: rgb(87, 155, 112);
-    transform: scale(1.5);
-    transition: .2s;
+  color: rgb(87, 155, 112);
+  transform: scale(1.5);
+  transition: 0.2s;
 }
 
 #btn-delete:hover {
-    color: rgb(231, 32, 25);
-    transform: scale(1.5);
-    transition: .2s;
+  color: rgb(231, 32, 25);
+  transform: scale(1.5);
+  transition: 0.2s;
 }
 
 #icon-up {
-    color: green;
+  color: green;
 }
 
 #icon-down {
-    color: red;
+  color: red;
 }
 
 .content___table ion-icon {
-    width: 20px;
-    height: 20px;
-
+  width: 20px;
+  height: 20px;
 }
 
 /* END TABELA */
 
 /*start FOOTER */
 footer {
-    /* display: flex;
+  /* display: flex;
     position: relative;
     justify-content: space-between;
     margin-top: 20px;
@@ -354,72 +335,71 @@ footer {
     height: 5%;
     bottom: 0;
     padding: 10px; */
-    margin-top: 25px;
-    padding: 10px;
-    border-top: 1px solid var(--primary);
-    box-shadow: inset 0 1px 1px var(--primary);
-    color: var(--primary);
-    font-weight: 300;
-    display: flex;
-    flex-direction: column;
-    background-color: #68B484;
+  margin-top: 25px;
+  padding: 10px;
+  border-top: 1px solid var(--primary);
+  box-shadow: inset 0 1px 1px var(--primary);
+  color: var(--primary);
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  background-color: #68b484;
 }
 
 .devdu {
-    color: #F2F2F2;
-    font-weight: bold;
-    margin: 0 auto;
-    display: grid;
-    flex: 1;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-
+  color: #f2f2f2;
+  font-weight: bold;
+  margin: 0 auto;
+  display: grid;
+  flex: 1;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .links {
-    display: flex;
-    position: absolute;
-    right: 0;
-    margin-right: 10px;
-    gap: .5rem;
+  display: flex;
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+  gap: 0.5rem;
 }
 
 .links ion-icon {
-    width: 25px;
-    height: 25px;
+  width: 25px;
+  height: 25px;
 }
 
 .links ion-icon {
-    color: #F2F2F2;
+  color: #f2f2f2;
 }
 
 #insta ion-icon:hover {
-    color: #ff2992;
-    cursor: pointer;
-    transform: scale(1.2);
-    transition: .2s;
+  color: #ff2992;
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: 0.2s;
 }
 
 #lin ion-icon:hover {
-    color: #0e76a8;
-    cursor: pointer;
-    transform: scale(1.2);
-    transition: .2s;
+  color: #0e76a8;
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: 0.2s;
 }
 
 #face ion-icon:hover {
-    color: #4267b3;
-    cursor: pointer;
-    transform: scale(1.2);
-    transition: .2s;
+  color: #4267b3;
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: 0.2s;
 }
 
 #git ion-icon:hover {
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-    transform: scale(1.2);
-    transition: .2s;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: 0.2s;
 }
 
 /* end FOOTER */
