@@ -25,7 +25,7 @@ btn.onclick = (e) => {
     const modalidade = document.querySelector('input[name="modalidade"]:checked');
     const data = document.querySelector('#date');
  
-    if (desc.value === "" || valor.value === "" || modalidade.value === "") {
+    if (desc.value === "" || valor.value === "" || modalidade.value === "" || data.value === "") {
         return alert("Preencha todos os campos!");
     }
 
