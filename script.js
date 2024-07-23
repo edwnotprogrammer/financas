@@ -23,7 +23,7 @@ btn.onclick = (e) => {
     const desc = document.querySelector("#desc");
     const valor = document.querySelector("#valor");
     const modalidade = document.querySelector('input[name="modalidade"]:checked');
-    // const data = document.querySelector('#date');
+    const data = document.querySelector('#date');
  
     if (desc.value === "" || valor.value === "" || modalidade.value === "") {
         return alert("Preencha todos os campos!");
@@ -33,9 +33,13 @@ btn.onclick = (e) => {
         items[formid.value].desc = desc.value
         items[formid.value].valor = valor.value
         items[formid.value].modalidade = modalidade.value
-        // items[formid.value].data = data.value
+        items[formid.value].data = data.value
     } else {
-        items.unshift({ 'desc': desc.value, 'valor': valor.value, 'modalidade': modalidade.value,})
+        items.unshift({ 
+            'desc': desc.value, 
+            'valor': valor.value, 
+            'modalidade': modalidade.value, 
+            'data': data.value})
 
     }
 
@@ -119,11 +123,11 @@ function limparform() {
 
     let desc = document.querySelector("#desc");
     let valor = document.querySelector("#valor");
-    // let data = document.querySelector('#date');
+    let data = document.querySelector('#date');
 
     desc.value = ''
     valor.value = ''
-    // data.value = ''
+    data.value = ''
     formid.value = ''
     document.querySelector('#r-saida').checked = false
     document.querySelector('#r-entrada').checked = false
@@ -149,7 +153,7 @@ function insertItem(item, index) {
     tr.innerHTML = (`
 <td>${item.desc}</td>
 <td> ${formatmoney(Number(item.valor))}</td>
-<td>${formtdata(data)}</td>
+<td>${formtdata(item.data)}</td>
 <td class= "icon-up-down">${item.modalidade === "E"
             ? '<ion-icon id="icon-up" name="caret-up"></ion-icon>'
             : '<ion-icon id="icon-down" name="caret-down"></ion-icon>'}
@@ -229,7 +233,7 @@ function zerofill(numero, lagura) {
 
 function formtdata(texto) {
 
-    return moment(texto).format('MM/DD/YYYY');
+    return moment(texto).format('DD/MM/YYYY');
 
 }
 
