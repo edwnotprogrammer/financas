@@ -11,6 +11,7 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
     <script src="https://cdn.sheetjs.com/xlsx-0.18.8/package/dist/xlsx.zahl.js"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
     
 
     <title>Finanças</title>
@@ -64,6 +65,9 @@
                 <span>Valor</span>
                 <i></i>
             </div>
+            <div class="content__date">
+                <input id="date" name="data" type="date" value="yyyy-MM-dd"/>
+            </div>
             <div class="content___desc___radio">
                 <div class="content__desc">
                     <input type="radio" name="modalidade" id="r-entrada" value="E" required />
@@ -72,6 +76,7 @@
                     <input type="radio" name="modalidade" id="r-saida" value="S" required />
                     <label for="r-saida">Saida</label>
                 </div>
+                
             </div>
             <div id="btncontet">
                 <button class="content___desc___button" type="submit" id="btn">

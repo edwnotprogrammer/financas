@@ -48,7 +48,7 @@ html ::-webkit-scrollbar-track {
 /* start Main */
 
 .content__main {
-  width: min(90vw, 850px);
+  width: min(90vw, 950px);
   margin: auto;
   flex: 1 1 0;
 }
@@ -190,6 +190,12 @@ input[type="number"]::-webkit-outer-spin-button {
   height: 100%;
 }
 
+.content__date{
+  display: flex;
+  padding: 1% 0 0 0;
+  gap: 1.5rem;
+}
+
 .content___desc___radio {
   display: flex;
   padding: 1% 0 0 0;
@@ -206,7 +212,7 @@ input[type="number"]::-webkit-outer-spin-button {
   gap: 0.7rem;
   color: #e7e9eb;
   border-radius: 2em;
-  width: 8em;
+  width: 6em;
   height: 2em;
   justify-content: center;
   text-align: center;

@@ -7,8 +7,8 @@ function htmlTableToExcel(){
     line.push("DESCRIÇÃO");
     line.push("VALOR");
     line.push("TIPO");
+    line.push("DATA")
     
-    // line.push("data");
     
     excelLines.push(line);
 
@@ -18,7 +18,7 @@ function htmlTableToExcel(){
         record.push(line.desc);
         record.push(line.valor);
         record.push(line.modalidade === 'E' ? 'ENTRADA' : 'SAIDA');
-        // record.push(line.data);
+        record.push(line.data);
         excelLines.push(record);
     }
 

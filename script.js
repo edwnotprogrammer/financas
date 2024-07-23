@@ -23,7 +23,8 @@ btn.onclick = (e) => {
     const desc = document.querySelector("#desc");
     const valor = document.querySelector("#valor");
     const modalidade = document.querySelector('input[name="modalidade"]:checked');
-
+    // const data = document.querySelector('#date');
+ 
     if (desc.value === "" || valor.value === "" || modalidade.value === "") {
         return alert("Preencha todos os campos!");
     }
@@ -32,8 +33,9 @@ btn.onclick = (e) => {
         items[formid.value].desc = desc.value
         items[formid.value].valor = valor.value
         items[formid.value].modalidade = modalidade.value
+        // items[formid.value].data = data.value
     } else {
-        items.unshift({ 'desc': desc.value, 'valor': valor.value, 'modalidade': modalidade.value })
+        items.unshift({ 'desc': desc.value, 'valor': valor.value, 'modalidade': modalidade.value,})
 
     }
 
@@ -86,6 +88,7 @@ function editarItem(edit = true, index = 0) {
 
         const desc = document.querySelector("#desc");
         const valor = document.querySelector("#valor");
+        const data = document.querySelector("#date");
 
 
         if (items[index].modalidade === 'E') {
@@ -96,6 +99,7 @@ function editarItem(edit = true, index = 0) {
 
         desc.value = items[index].desc
         valor.value = items[index].valor
+        data.value = items[index].data
         id = index
 
         document.getElementById('btn').innerHTML = `<ion-icon name="create-outline"></ion-icon>
@@ -115,9 +119,11 @@ function limparform() {
 
     let desc = document.querySelector("#desc");
     let valor = document.querySelector("#valor");
+    // let data = document.querySelector('#date');
 
     desc.value = ''
     valor.value = ''
+    // data.value = ''
     formid.value = ''
     document.querySelector('#r-saida').checked = false
     document.querySelector('#r-entrada').checked = false
@@ -136,13 +142,14 @@ function insertItem(item, index) {
     const desc = document.querySelector("#desc");
     const valor = document.querySelector("#valor");
     const modalidade = document.querySelector('input[name="modalidade"]:checked');
+    const data = document.querySelector('#date').value;
 
     let tr = document.createElement("tr");
 
     tr.innerHTML = (`
 <td>${item.desc}</td>
 <td> ${formatmoney(Number(item.valor))}</td>
-<td>${formtdata()}</td>
+<td>${formtdata(data)}</td>
 <td class= "icon-up-down">${item.modalidade === "E"
             ? '<ion-icon id="icon-up" name="caret-up"></ion-icon>'
             : '<ion-icon id="icon-down" name="caret-down"></ion-icon>'}
@@ -150,7 +157,9 @@ function insertItem(item, index) {
 <td class="btn-actions">
     <button id="btn-editar" onclick="editarItem(true, ${index})"><ion-icon name="create-outline"></ion-icon>
     <button id="btn-delete" onclick="deleteItem(${index})"><ion-icon name="trash-outline"></ion-icon></button>
-</td>`);
+</td>
+<td></td>`);
+
 
     tbody.appendChild(tr);
 }
@@ -218,15 +227,13 @@ function zerofill(numero, lagura) {
     return String(numero).padStart(lagura, '0');
 }
 
-function formtdata() {
+function formtdata(texto) {
 
-    const data = new Date();
-    const dia = zerofill(data.getDate(), 2);
-    const meses = zerofill(data.getMonth() + 1, 2);
-    const ano = data.getFullYear();
+    return moment(texto).format('MM/DD/YYYY');
 
-    return `${dia}/${meses}/${ano}`
 }
+
+// console.log(data.value)
 
 // END LOCALSTORE & FORMAT DATE
 loadItens();
