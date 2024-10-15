@@ -26,5 +26,5 @@ function htmlTableToExcel(){
     let ws = XLSX.utils.aoa_to_sheet(excelLines);
 
     XLSX.utils.book_append_sheet(wb, ws, "MOVIMENTAÇÕES");
-    XLSX.writeFile(wb, "FINANÇAS.xlsx", { xlsx: XLSX_ZAHL_PAYLOAD, compression: true });
+    XLSX.writeFile(wb, "Relatorios.xlsx", { xlsx: XLSX_ZAHL_PAYLOAD, compression: true });
 }

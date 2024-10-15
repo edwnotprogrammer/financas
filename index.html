@@ -1,137 +1,155 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="icon" href="img/coin.png" type="img/icon">
-    <!-- <link rel="stylesheet" href="script.js" type="js/script"> -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
-    <script src="https://cdn.sheetjs.com/xlsx-0.18.8/package/dist/xlsx.zahl.js"></script>
-    <script src="https://momentjs.com/downloads/moment.js"></script>
-    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="icon" href="img/coin.png" type="img/icon">
+        <!-- <link rel="stylesheet" href="script.js" type="js/script"> -->
+        <script type="module"
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule
+            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script
+            src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+        <script
+            src="https://cdn.sheetjs.com/xlsx-0.18.8/package/dist/xlsx.zahl.js"></script>
+        <script src="https://momentjs.com/downloads/moment.js"></script>
 
-    <title>Finanças</title>
-</head>
+        <title>Finanças</title>
+    </head>
 
-<body>
-    <header class="content__header">
-        <img src="img/Image.svg">
-    </header>
-    <main class="content__main">
-        <section class="content__section">
-            <div class="content__card">
-                <h1>
-                    Proventos
-                    <ion-icon name="arrow-up-outline" class="icon-p"></ion-icon>
-                </h1>
-                <p>
-                    <span class="p-number">0.00</span>
-                </p>
-            </div>
-            <div class="content__card">
-                <h1 class="gastos">
-                    Gastos
-                    <ion-icon name="arrow-down-outline"></ion-icon>
-                </h1>
-                <p>
-                    <span class="g-number">0.00<span>
-                </p>
-            </div>
-            <div class="content__card">
-                <h1>
-                    Saldo
-                    <div id="checkd-alert">
-                        <ion-icon name="wallet-outline"></ion-icon>
-                    </div>
-                </h1>
-                <p>
-                    <span class="s-number" id="saldo">0.00<span>
-                </p>
-            </div>
-        </section>
-        <form class="content__section__desc">
-            <input type="hidden" id="formid">
-            <div class="content__desc">
-                <input type="text" required id="desc">
-                <span>Descrição</span>
-                <i></i>
-            </div>
-            <div class="content__desc">
-                <input type="number" step="0.01" required id="valor" requeired />
-                <span>Valor</span>
-                <i></i>
-            </div>
-            <div class="content__date">
-                <input id="date" name="data" type="date" value="yyyy-MM-dd"/>
-            </div>
-            <div class="content___desc___radio">
-                <div class="content__desc">
-                    <input type="radio" name="modalidade" id="r-entrada" value="E" required />
-                    <label for="r-entrada">Entrada</label>
-
-                    <input type="radio" name="modalidade" id="r-saida" value="S" required />
-                    <label for="r-saida">Saida</label>
+    <body>
+        <header class="content__header">
+            <img src="img/Image.svg">
+        </header>
+        <main class="content__main">
+            <section class="content__section">
+                <div class="content__card">
+                    <h1>
+                        Proventos
+                        <ion-icon name="arrow-up-outline"
+                            class="icon-p"></ion-icon>
+                    </h1>
+                    <p>
+                        <span class="p-number">0.00</span>
+                    </p>
                 </div>
-                
-            </div>
-            <div id="btncontet">
-                <button class="content___desc___button" type="submit" id="btn">
-                    <ion-icon name="add-circle-outline"></ion-icon> Salvar
-                </button>
-            </div>
-        </form>
+                <div class="content__card">
+                    <h1 class="gastos">
+                        Gastos
+                        <ion-icon name="arrow-down-outline"></ion-icon>
+                    </h1>
+                    <p>
+                        <span class="g-number">0.00<span>
+                            </p>
+                        </div>
+                        <div class="content__card">
+                            <h1>
+                                Saldo
+                                <div id="checkd-alert">
+                                    <ion-icon name="wallet-outline"></ion-icon>
+                                </div>
+                            </h1>
+                            <p>
+                                <span class="s-number" id="saldo">0.00<span>
+                                    </p>
+                                </div>
+                            </section>
+                            <form class="content__section__desc">
+                                <input type="hidden" id="formid">
+                                <div class="content__desc">
+                                    <input type="text" required id="desc">
+                                    <span>Descrição</span>
+                                    <i></i>
+                                </div>
+                                <div class="content__desc">
+                                    <input type="number" step="0.01" required
+                                        id="valor" requeired />
+                                    <span>Valor</span>
+                                    <i></i>
+                                </div>
+                                <div class="content__date">
+                                    <input id="date" name="data" type="date"
+                                        value="yyyy-MM-dd" />
+                                </div>
+                                <div class="content___desc___radio">
+                                    <div class="content__desc">
+                                        <input type="radio" name="modalidade"
+                                            id="r-entrada" value="E" required />
+                                        <label for="r-entrada">Entrada</label>
 
-      
-        
-        <div class="content___table">
-            <table id="Tabela">
-                <thead>
-                    <th>Descrição</th>
-                    <th class="t-valor">Valor</th>
-                    <th class="t-data">Data</th>
-                    <th class="t-status">Status</th>
-                    <th class="t-opcoes">Opções </th>
-                    <th><button class="btn_excel" onclick="htmlTableToExcel()"><img src="img/excel-3-32.ico" width="20" height="20"></button></th>
-                    
-                </thead>
-            
-                <tbody></tbody>
-             
-            </table>
-        </div>
-        
-    </main>
-   
-    <footer>
-        <div class="devdu">
-            DevDu 2023, © Copyright - Todos os Direitos
-            Reservados.
-        </div>
-        <div class="links">
-            <a href="https://www.instagram.com/t_wo_d/" target="_blank" id="insta">
-                <ion-icon name="logo-instagram"></ion-icon>
-            </a>
+                                        <input type="radio" name="modalidade"
+                                            id="r-saida" value="S" required />
+                                        <label for="r-saida">Saida</label>
+                                    </div>
 
-            <a href="https://www.linkedin.com/in/eduardo-santos-pessoa-602ab4231/" target="_blank" id="lin">
-                <ion-icon name="logo-linkedin"></ion-icon>
-            </a>
+                                </div>
+                                <div id="btncontet">
+                                    <button class="content___desc___button"
+                                        type="submit" id="btn">
+                                        <ion-icon
+                                            name="add-circle-outline"></ion-icon>
+                                        Salvar
+                                    </button>
+                                </div>
+                            </form>
 
-            <a href="https://www.facebook.com/Eduardo.santos3117" target="_blank" id="face">
-                <ion-icon name="logo-facebook"></ion-icon>
-            </a>
+                            <div class="content___table">
+                                <table id="Tabela">
+                                    <thead>
+                                        <th>Descrição</th>
+                                        <th class="t-valor">Valor</th>
+                                        <th class="t-data">Data</th>
+                                        <th class="t-status">Status</th>
+                                        <th class="t-opcoes">Opções </th>
+                                        <th><button class="btn_excel"
+                                                onclick="htmlTableToExcel()"><img
+                                                    src="img/excel-3-32.ico"
+                                                    width="20"
+                                                    height="20"></button></th>
+                                    </thead>
 
-            <a href="https://github.com/Edusanpe" target="_blank" id="git">
-                <ion-icon name="logo-github"></ion-icon>
-            </a>
-        </div>
-    </footer>
-</body>
-<script src="function.js"></script>
-<script src="script.js"></script>
-<script src="exportExcel.js"></script>
+                                    <tbody></tbody>
 
-</html>
+                                </table>
+                            </div>
+
+                        </main>
+
+                        <footer>
+                            <div class="devdu">
+                                DevDu 2023, © Copyright - Todos os Direitos
+                                Reservados.
+                            </div>
+                            <div class="links">
+                                <a href="https://www.instagram.com/t_wo_d/"
+                                    target="_blank" id="insta">
+                                    <ion-icon name="logo-instagram"></ion-icon>
+                                </a>
+
+                                <a
+                                    href="https://www.linkedin.com/in/eduardo-santos-pessoa-602ab4231/"
+                                    target="_blank" id="lin">
+                                    <ion-icon name="logo-linkedin"></ion-icon>
+                                </a>
+
+                                <a
+                                    href="https://www.facebook.com/Eduardo.santos3117"
+                                    target="_blank" id="face">
+                                    <ion-icon name="logo-facebook"></ion-icon>
+                                </a>
+
+                                <a href="https://github.com/Edusanpe"
+                                    target="_blank" id="git">
+                                    <ion-icon name="logo-github"></ion-icon>
+                                </a>
+                            </div>
+                        </footer>
+                    </body>
+                    <script src="function.js"></script>
+                    <script src="script.js"></script>
+                    <script src="exportExcel.js"></script>
+
+                </html>
