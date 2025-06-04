@@ -438,9 +438,14 @@ footer {
   border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s; 
 }
-
+#mostrar-ocultos ion-icon{
+  width: 20px;
+    height: 20px;
+    overflow: hidden;
+    
+}
 #mostrar-ocultos:hover {
   background-color: hsl(142, 34%, 56%);
 }
