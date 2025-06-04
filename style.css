@@ -412,5 +412,8 @@ footer {
   transform: scale(1.2);
   transition: 0.2s;
 }
-
+.riscado td {
+    text-decoration: line-through;
+    opacity: 0.6;
+}
 /* end FOOTER */
