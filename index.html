@@ -1,25 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="style.css">
         <link rel="icon" href="img/coin.png" type="img/icon">
         <!-- <link rel="stylesheet" href="script.js" type="js/script"> -->
-        <script type="module"
-            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule
-            src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-        <script
-            src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
-        <script
-            src="https://cdn.sheetjs.com/xlsx-0.18.8/package/dist/xlsx.zahl.js"></script>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+        <script src="https://cdn.sheetjs.com/xlsx-0.18.8/package/dist/xlsx.zahl.js"></script>
         <script src="https://momentjs.com/downloads/moment.js"></script>
-
         <title>Finanças</title>
     </head>
-
     <body>
         <header class="content__header">
             <img src="img/Image.svg">
@@ -29,8 +22,7 @@
                 <div class="content__card">
                     <h1>
                         Proventos
-                        <ion-icon name="arrow-up-outline"
-                            class="icon-p"></ion-icon>
+                        <ion-icon name="arrow-up-outline" class="icon-p"></ion-icon>
                     </h1>
                     <p>
                         <span class="p-number">0.00</span>
@@ -42,7 +34,9 @@
                         <ion-icon name="arrow-down-outline"></ion-icon>
                     </h1>
                     <p>
-                        <span class="g-number">0.00<span>
+                        <span class="g-number">
+                            0.00
+                            <span>
                             </p>
                         </div>
                         <div class="content__card">
@@ -53,7 +47,9 @@
                                 </div>
                             </h1>
                             <p>
-                                <span class="s-number" id="saldo">0.00<span>
+                                <span class="s-number" id="saldo">
+                                    0.00
+                                    <span>
                                     </p>
                                 </div>
                             </section>
@@ -65,36 +61,57 @@
                                     <i></i>
                                 </div>
                                 <div class="content__desc">
-                                    <input type="number" step="0.01" required
-                                        id="valor" requeired />
+                                    <input
+                                        type="number"
+                                        step="0.01"
+                                        required
+                                        id="valor"
+                                        requeired
+                                    >
                                     <span>Valor</span>
                                     <i></i>
                                 </div>
                                 <div class="content__date">
-                                    <input id="date" name="data" type="date"/>
+                                    <input id="date" name="data" type="date">
                                 </div>
                                 <div class="content___desc___radio">
                                     <div class="content__desc">
-                                        <input type="radio" name="modalidade"
-                                            id="r-entrada" value="E" required />
+                                        <input
+                                            type="radio"
+                                            name="modalidade"
+                                            id="r-entrada"
+                                            value="E"
+                                            required
+                                        >
                                         <label for="r-entrada">Entrada</label>
-
-                                        <input type="radio" name="modalidade"
-                                            id="r-saida" value="S" required />
+                                        <input
+                                            type="radio"
+                                            name="modalidade"
+                                            id="r-saida"
+                                            value="S"
+                                            required
+                                        >
                                         <label for="r-saida">Saida</label>
                                     </div>
-
                                 </div>
                                 <div id="btncontet">
-                                    <button class="content___desc___button"
-                                        type="submit" id="btn">
-                                        <ion-icon
-                                            name="add-circle-outline"></ion-icon>
+                                    <button class="content___desc___button" type="submit" id="btn">
+                                        <ion-icon name="add-circle-outline"></ion-icon>
                                         Salvar
                                     </button>
                                 </div>
                             </form>
-
+                            <div class="content_icon_bnt">
+                                <div></div>
+                                <div>
+                                    <button class="btn_excel" onclick="htmlTableToExcel()">
+                                        <img src="img/excel-3-32.ico">
+                                    </button>
+                                    <button id="mostrar-ocultos" onclick="toggleOcultos()">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                    </button>
+                                </div>
+                            </div>
                             <div class="content___table">
                                 <table id="Tabela">
                                     <thead>
@@ -102,53 +119,75 @@
                                         <th class="t-valor">Valor</th>
                                         <th class="t-data">Data</th>
                                         <th class="t-status">Status</th>
-                                        <th class="t-opcoes">Opções </th>
-                                        <th><button class="btn_excel"
-                                                onclick="htmlTableToExcel()"><img
-                                                    src="img/excel-3-32.ico"
-                                                    width="20"
-                                                    height="20"></button></th>
+                                        <th class="t-opcoes">Opções</th>
                                     </thead>
-
                                     <tbody></tbody>
-
                                 </table>
                             </div>
-
+                            <!-- 📦 Container dos itens ocultos -->
+                            <div id="lista-ocultos" style="display: none; margin-top: 10px;">
+                                <h3>Itens Ocultos</h3>
+                                <table style="width: 100%;">
+                                    <thead>
+                                        <tr>
+                                            <th>Descrição</th>
+                                            <th>Valor</th>
+                                            <th>Data</th>
+                                            <th>Reexibir</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="tbody-ocultos"></tbody>
+                                </table>
+                            </div>
                         </main>
-
                         <footer>
                             <div class="devdu">
                                 DevDu 2023, © Copyright - Todos os Direitos
                                 Reservados.
                             </div>
                             <div class="links">
-                                <a href="https://www.instagram.com/t_wo_d/"
-                                    target="_blank" id="insta">
+                                <a href="https://www.instagram.com/t_wo_d/" target="_blank" id="insta">
                                     <ion-icon name="logo-instagram"></ion-icon>
                                 </a>
-
-                                <a
-                                    href="https://www.linkedin.com/in/eduardo-santos-pessoa-602ab4231/"
-                                    target="_blank" id="lin">
+                                <a href="https://www.linkedin.com/in/eduardo-santos-pessoa-602ab4231/" target="_blank" id="lin">
                                     <ion-icon name="logo-linkedin"></ion-icon>
                                 </a>
-
-                                <a
-                                    href="https://www.facebook.com/Eduardo.santos3117"
-                                    target="_blank" id="face">
+                                <a href="https://www.facebook.com/Eduardo.santos3117" target="_blank" id="face">
                                     <ion-icon name="logo-facebook"></ion-icon>
                                 </a>
-
-                                <a href="https://github.com/edwnotprogrammer"
-                                    target="_blank" id="git">
+                                <a href="https://github.com/edwnotprogrammer" target="_blank" id="git">
                                     <ion-icon name="logo-github"></ion-icon>
                                 </a>
                             </div>
                         </footer>
-                    </body>
-                    <script src="function.js"></script>
-                    <script src="script.js"></script>
-                    <script src="exportExcel.js"></script>
-
-                </html>
+                        <div id="modalOcultos" class="modal">
+                            <div class="modal-content">
+                                <span class="close" onclick="fecharModalOcultos()">&times;</span>
+                                <h2 style="text-align: center;">
+                                    Selecionar Itens
+                                    para Reexibir
+                                </h2>
+                                <form id="formOcultos">
+                                    <table class="modal-table">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th>Descrição</th>
+                                                <th>Valor</th>
+                                                <th>Data</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="modal-body-ocultos">
+                                            <!-- Preenchido dinamicamente --></tbody>
+                                    </table>
+                                    <button type="button" class="modal-button" onclick="reexibirSelecionados()">
+                                        <ion-icon name="eye-outline"></ion-icon>
+                                        Reexibir Selecionados
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                        <script src="function.js"></script>
+                        <script src="script.js"></script>
+                        <script src="exportExcel.js"></script>
+                    </html>

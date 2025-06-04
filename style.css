@@ -118,6 +118,7 @@ html ::-webkit-scrollbar-track {
 
 /* end Section */
 
+
 /* start DESCRIÇÃO */
 
 .content__section__desc {
@@ -190,15 +191,15 @@ input[type="number"]::-webkit-outer-spin-button {
   height: 100%;
 }
 
-.content__date{
+.content__date {
   display: flex;
   padding: 1% 0 0 0;
   gap: 1.5rem;
 }
-.content__date input{
-border-radius: 1rem;
-border: 0.5px solid rgb(104, 180, 132);
-text-align: center;
+.content__date input {
+  border-radius: 1rem;
+  border: 0.5px solid rgb(104, 180, 132);
+  text-align: center;
 }
 
 .content___desc___radio {
@@ -223,11 +224,16 @@ text-align: center;
   text-align: center;
   align-items: center;
   display: flex;
+  transition: background-color 0.3s ease;
 }
 
 .content___desc___button ion-icon {
   width: 20px;
   height: 20px;
+}
+.content___desc___button:hover {
+  background-color: white;
+  color: black;
 }
 
 #btncontet {
@@ -252,7 +258,7 @@ text-align: center;
 .content___table {
   display: flex;
   background: white;
-  margin-top: 20px;
+  margin-top: 5px;
   border-radius: 3px;
   box-shadow: 5px 5px 5px gray;
   border: 0.5px solid black;
@@ -268,14 +274,6 @@ table {
   background-color: #68b484;
 }
 
-.btn_excel {
-  background-color: transparent;
-  border: 0px;
-  align-items: center;
-  padding-top: 5px;
-  margin-right: 1rem;
-  cursor: pointer;
-}
 
 .content___table th,
 td {
@@ -338,15 +336,6 @@ td {
 
 /*start FOOTER */
 footer {
-  /* display: flex;
-    position: relative;
-    justify-content: space-between;
-    margin-top: 20px;
-    width: 100%;
-    height: 5%;
-    bottom: 0;
-    padding: 10px; */
-  margin-top: 25px;
   padding: 10px;
   border-top: 1px solid var(--primary);
   box-shadow: inset 0 1px 1px var(--primary);
@@ -354,7 +343,7 @@ footer {
   font-weight: 300;
   display: flex;
   flex-direction: column;
-  background-color: #68b484;
+  background-color: hsl(142, 34%, 56%);
 }
 
 .devdu {
@@ -412,8 +401,148 @@ footer {
   transform: scale(1.2);
   transition: 0.2s;
 }
-.riscado td {
-    text-decoration: line-through;
-    opacity: 0.6;
+.oculto {
+  opacity: 0.4;
+  background-color: #f0f0f0;
+  text-decoration: line-through;
+}
+.content_icon_bnt {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 5px 0 5px 0;
+}
+
+.content_icon_bnt div:last-child {
+  display: flex;
+  flex-direction: row;
+}
+
+.btn_excel {
+  background-color: transparent;
+  border: 0px;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.btn_excel img{
+  display: block;
+  height: 25px;
+}
+
+
+#mostrar-ocultos {
+  background-color: hsl(142, 34%, 56%);
+  color: #000000;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#mostrar-ocultos:hover {
+  background-color: #dcdcdc;
+}
+
+.btn-eye {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4em;
+  color: #555;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.btn-eye:hover {
+  color: #222;
+  transform: scale(1.2);
+}
+.modal {
+  display: none; /* Só aparece quando ativado */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+/* Conteúdo do modal */
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 700px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  font-family: "Arial", sans-serif;
+  background-color: #f9f9f9;
+}
+
+/* Botão fechar */
+.close {
+  color: #333;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #e60000;
+}
+
+/* Tabela */
+.modal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.modal-table th,
+.modal-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.modal-table th {
+  background-color: #e6e6e6;
+}
+
+/* Botão */
+.modal-button {
+  margin-top: 20px;
+  background-color: #68b484;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.modal-button:hover {
+  background-color: #87c99f;
+}
+
+.btn-ocultos:hover {
+  background-color: #000000;
+}
+.modal-table th {
+  background-color: #68b484;
+  color: white;
+  text-align: center;
+}
+.modal-table td {
+  text-align: center;
 }
 /* end FOOTER */
