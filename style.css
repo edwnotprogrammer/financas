@@ -431,7 +431,7 @@ footer {
 
 
 #mostrar-ocultos {
-  background-color: hsl(142, 34%, 56%);
+  background-color: white;
   color: #000000;
   border: none;
   padding: 10px 15px;
@@ -442,7 +442,7 @@ footer {
 }
 
 #mostrar-ocultos:hover {
-  background-color: #dcdcdc;
+  background-color: hsl(142, 34%, 56%);
 }
 
 .btn-eye {
