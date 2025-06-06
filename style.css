@@ -430,6 +430,7 @@ footer {
 }
 
 
+
 #mostrar-ocultos {
   background-color: white;
   color: #000000;
@@ -444,7 +445,6 @@ footer {
   width: 20px;
     height: 20px;
     overflow: hidden;
-    
 }
 #mostrar-ocultos:hover {
   background-color: hsl(142, 34%, 56%);
