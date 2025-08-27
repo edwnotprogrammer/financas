@@ -1,4 +1,69 @@
 /* start ALL */
+
+@media (max-width: 768px) {
+  /* 1. Ajuste dos Cards Principais */
+  .content__section {
+    flex-direction: column; /* Empilha os cards verticalmente */
+    gap: 1rem;
+  }
+
+  .content__card {
+    width: 90%; /* Ocupa 90% da largura da tela */
+    height: auto; /* Altura se ajusta ao conteúdo */
+    padding-bottom: 10px;
+  }
+
+  .content__card:hover {
+    transform: none; /* Remove o efeito de levantar no celular */
+  }
+
+  /* 2. Ajuste do Formulário */
+  .content__section__desc {
+    flex-direction: column; /* Empilha os campos do formulário */
+    padding: 20px; /* Reduz o espaçamento interno */
+    gap: 2.5rem; /* Aumenta o espaço vertical entre os itens */
+  }
+
+  .content__date {
+    padding: 0;
+  }
+
+  .content___desc___radio {
+    padding: 0;
+    justify-content: center;
+  }
+
+  /* 3. Ajuste da Tabela */
+  .content___table {
+    overflow-x: auto; /* Permite rolar a tabela horizontalmente */
+  }
+
+  /* Opcional: Esconde colunas menos importantes na tabela */
+  .t-data,
+  .t-status {
+    display: none;
+  }
+
+  /* Ajusta a célula de cabeçalho correspondente */
+  th.t-data,
+  th.t-status {
+    display: none;
+  }
+
+  /* 4. Ajuste do Rodapé */
+  footer {
+    padding: 20px 10px;
+    position: relative; /* Necessário para que os links se comportem bem */
+  }
+
+  .links {
+    position: static; /* Remove o posicionamento absoluto */
+    justify-content: center; /* Centraliza os ícones */
+    width: 100%;
+    margin-top: 15px; /* Adiciona espaço acima dos links */
+    margin-right: 0;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -117,7 +182,6 @@ html ::-webkit-scrollbar-track {
 }
 
 /* end Section */
-
 
 /* start DESCRIÇÃO */
 
@@ -274,7 +338,6 @@ table {
   background-color: #68b484;
 }
 
-
 .content___table th,
 td {
   text-align: center;
@@ -424,12 +487,10 @@ footer {
   margin-right: 1rem;
   cursor: pointer;
 }
-.btn_excel img{
+.btn_excel img {
   display: block;
   height: 25px;
 }
-
-
 
 #mostrar-ocultos {
   background-color: white;
@@ -439,12 +500,12 @@ footer {
   border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
-  transition: background-color 0.3s; 
+  transition: background-color 0.3s;
 }
-#mostrar-ocultos ion-icon{
+#mostrar-ocultos ion-icon {
   width: 20px;
-    height: 20px;
-    overflow: hidden;
+  height: 20px;
+  overflow: hidden;
 }
 #mostrar-ocultos:hover {
   background-color: hsl(142, 34%, 56%);
